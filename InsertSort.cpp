@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+template <class T>
+void InsertSort(T a[],int length)
+{
+    T tmp;
+    for(int i = 1;i < length;i++)
+    {
+	tmp = a[i];
+	int j = i - 1;
+	for(;j >= 0 && tmp < a[j];j--)
+	{
+	    a[j+1] = a[j];
+
+	}
+	a[j+1] = tmp;
+    }
+}
+int main()
+{
+    int a[] = {4,5,2,3,6,7,8,1,9};
+    InsertSort(a,9);
+    for(int i = 0; i < 9;i++)
+	cout << a[i] << ",";
+    return 0;
+}
+

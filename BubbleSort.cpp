@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+
+template <class T>
+void BubbleSort(T a[],int length)
+{
+    for(int i = 0;i < length - 1;i++)
+	for(int j = i + 1;j < length;j++)
+	{
+	    if(a[j] < a[j-1])
+	    {
+		int tmp = a[j];
+		a[j] = a[j-1];
+		a[j-1]=tmp;
+	    }
+	}
+}
+int main()
+{
+    int a[]={3,5,3,4,8,6,9,7};
+    BubbleSort(a,8);
+    for(int i = 0;i < 7;i++)
+	cout << a[i];
+    return 0;
+}
